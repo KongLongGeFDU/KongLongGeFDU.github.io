@@ -661,6 +661,14 @@ img {
     line-height: 1.5;
 }
 
+.conf-note {
+    font-size: 12px;
+    color: var(--color-primary);
+    font-style: italic;
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
 .venue-badge.upcoming {
     background: #e67e22;
 }
