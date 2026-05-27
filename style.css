@@ -607,6 +607,64 @@ img {
     margin-bottom: 10px;
 }
 
+/* ===== Conferences & Travels ===== */
+.conf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 12px 0 20px;
+}
+
+.conf-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, #fefefe, #f8fbff);
+    border: 1px solid #e0e8f0;
+    border-left: 4px solid var(--color-primary);
+    border-radius: 6px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.conf-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.conf-card.upcoming {
+    border-left-color: #e67e22;
+    background: linear-gradient(135deg, #fffaf3, #fff5e6);
+}
+
+.conf-flag {
+    font-size: 34px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.conf-body {
+    min-width: 0;
+}
+
+.conf-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.conf-loc {
+    font-size: 13px;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+.venue-badge.upcoming {
+    background: #e67e22;
+}
+
 /* ===== Visitor Map ===== */
 .visitor-map {
     text-align: center;
