@@ -267,6 +267,29 @@ img {
     margin: 0;
 }
 
+.news-list.scrollable {
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) #f0f0f0;
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 24px), transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 calc(100% - 24px), transparent 100%);
+}
+
+.news-list.scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.news-list.scrollable::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+.news-list.scrollable::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 3px;
+}
+
 .news-list li {
     position: relative;
     padding: 8px 0 8px 0;
