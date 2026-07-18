@@ -511,8 +511,22 @@
 
                 <!-- Visitor Statistics -->
                 <h1 id="visitors">📊 Visitors</h1>
-                <div class="visitor-map">
-                    <script type="text/javascript" id="clstr_globe" src="https://clustrmaps.com/globe.js?d=Fj41EQW4zT0Jm1z8_PXs15124rtk-Hrs01vZxgbUoMo&w=280&t=tt"></script>
+                <div class="visitor-stats">
+                    <div class="visitor-counter-card">
+                        <div class="visitor-counter-icon" aria-hidden="true">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div class="visitor-counter-content">
+                            <div class="visitor-counter-label">Total visits</div>
+                            <div class="visitor-counter-value" id="goatcounter-total" aria-live="polite">Loading…</div>
+                            <div class="visitor-counter-note" id="goatcounter-status">
+                                Counting since July 2026 · Powered by <a href="https://www.goatcounter.com/" target="_blank" rel="noopener noreferrer">GoatCounter</a>
+                            </div>
+                        </div>
+                    </div>
+                    <noscript>
+                        <p class="visitor-counter-noscript">Enable JavaScript to view the visitor count.</p>
+                    </noscript>
                 </div>
 
             </section>
@@ -527,7 +541,23 @@
     </div>
 </footer>
 
+<script data-goatcounter="https://konglonggefdu.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
 <script>
+// Display the site-wide GoatCounter total
+fetch('https://konglonggefdu.goatcounter.com/counter/TOTAL.json')
+    .then(response => {
+        if (!response.ok) throw new Error('Visitor count unavailable');
+        return response.json();
+    })
+    .then(data => {
+        document.getElementById('goatcounter-total').textContent = data.count;
+    })
+    .catch(() => {
+        document.getElementById('goatcounter-total').textContent = '—';
+        document.getElementById('goatcounter-status').textContent = 'Visitor statistics are temporarily unavailable.';
+    });
+
 // Limit News list to first 10 items, rest scrollable
 (function () {
     const newsList = document.querySelector('.news-list');
