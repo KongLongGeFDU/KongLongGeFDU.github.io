@@ -203,12 +203,27 @@ img {
     color: var(--color-text-light);
 }
 
+.author__urls .social-logo {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    object-fit: contain;
+    vertical-align: -4px;
+    opacity: 0.68;
+    transition: opacity 0.15s;
+}
+
 .author__urls li a {
     color: var(--color-text);
 }
 
 .author__urls li a:hover {
     color: var(--color-link);
+}
+
+.author__urls li a:hover .social-logo {
+    opacity: 1;
 }
 
 /* ===== Main Content ===== */
